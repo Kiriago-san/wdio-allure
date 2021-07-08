@@ -27,8 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - name: Allure Report with history
-      uses: simple-elf/allure-report-action@v1.5
     - name: run test
       run: npm run test
     - name: Get Allure history
