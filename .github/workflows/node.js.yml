@@ -38,7 +38,7 @@ jobs:
         path: gh-pages
         
     - name: Test marketplace action
-      uses: Kiriago-san/wdio-allure@main
+      uses: Kiriago-san/wdio-allure@master
       if: always()
       id: allure-report
       with:
