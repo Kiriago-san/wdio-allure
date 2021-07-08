@@ -36,12 +36,16 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
-    - name: Checkout tools repo
-      uses: actions/checkout@v2
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+       API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
-         repository: Kiriago-san/webSite
-         ref: gh-pages
-         path: gh-pages
+       source-directory: 'output'
+       destination-github-username: 'Kiriago-san'
+       destination-repository-name: 'webSite'
+       user-email: o.leonov@nltu.lviv.ua
+       target-branch: main
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: always()
