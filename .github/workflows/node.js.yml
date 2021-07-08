@@ -47,9 +47,3 @@ jobs:
        destination-repository-name: 'HtmlActions'
        user-email: s.fart2012@gmail.com
        target-branch: main
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      if: always()
-      with:
-       github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: ./allure-report
