@@ -42,4 +42,4 @@ jobs:
       env:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         publish_branch: gh-pages
-        publish_dir:: allure-history
+        publish_dir: allure-history
