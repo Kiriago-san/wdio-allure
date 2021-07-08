@@ -41,7 +41,7 @@ jobs:
       env:
        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
-       source-directory: 'output'
+       source-directory: 'allure-report'
        destination-github-username: 'Kiriago-san'
        destination-repository-name: 'webSite'
        user-email: o.leonov@nltu.lviv.ua
