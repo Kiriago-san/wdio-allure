@@ -37,8 +37,8 @@ jobs:
         ref: gh-pages
         path: gh-pages
         
-    - name: Test marketplace action
-      uses: Kiriago-san/wdio-allure@master
+    - name: Test local action
+      uses: ./allure-report-action
       if: always()
       id: allure-report
       with:
