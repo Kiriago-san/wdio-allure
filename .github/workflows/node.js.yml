@@ -42,9 +42,9 @@ jobs:
        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
        source-directory: 'allure-report'
-       destination-github-username: 'Kiriago-san'
-       destination-repository-name: 'webSite'
-       user-email: o.leonov@nltu.lviv.ua
+       destination-github-username: 'ToActions'
+       destination-repository-name: 'HtmlActions'
+       user-email: s.fart2012@gmail.com
        target-branch: main
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
