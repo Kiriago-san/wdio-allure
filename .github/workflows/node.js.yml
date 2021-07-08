@@ -36,6 +36,12 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
+    - name: Checkout tools repo
+      uses: actions/checkout@v2
+      with:
+         repository: Kiriago-san/webSite
+         ref: gh-pages
+         path: gh-pages
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: always()
