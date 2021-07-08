@@ -28,6 +28,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: run test
-      run: npx wdio wdio.conf.js
+      run: npm run test
     - name: Publishing Allure artifact to Github Actions
       uses: actions/upload-artifact@v2
