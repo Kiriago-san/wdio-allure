@@ -34,7 +34,7 @@ jobs:
       if: always()
       with:
         ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        BRANCH: master
+        BRANCH: main
         FOLDER: allure-report
         TARGET_FOLDER: allure-report
     - name: Pushes to another repository
