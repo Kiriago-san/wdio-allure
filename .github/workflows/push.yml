@@ -2,6 +2,8 @@ name:  Push report
 
 on:
   deployment:
+    branches: [ master ]
+    
 jobs:
   push:
        runs-on: ubuntu-20.04
