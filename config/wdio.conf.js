@@ -6,14 +6,16 @@ exports.config = {
 
 
     // ...
-    onComplete: function() {
+    afterSession: function() {
+        const { exec } = require("child_process");
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
+        exec('cp -R allure-report/history allure-results');
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
                 5000)
-            //exec('cp -R allure-report/history allure-results');
+           
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout)
 
