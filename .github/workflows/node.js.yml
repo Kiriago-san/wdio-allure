@@ -45,6 +45,6 @@ jobs:
       with:
        source-directory: 'allure-report'
        destination-github-username: 'Kiriago-san'
-       destination-repository-name:  'webSite'
+       destination-repository-name: 'webSite'
        user-email: o.leonov@nltu.lviv.ua
        target-branch: main
