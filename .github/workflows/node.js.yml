@@ -67,19 +67,19 @@ jobs:
         allure_history: last-history
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
       env:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
-    - name: Pushes to another repository
-      uses: cpina/github-action-push-to-another-repository@main
-      if: always()
-      env:
-       API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
-      with:
-       source-directory: 'allure-report'
-       destination-github-username: 'Kiriago-san'
-       destination-repository-name: 'webSite'
-       user-email: o.leonov@nltu.lviv.ua
-       target-branch: main
+        deploy_key: ${{ secrets.PERSONAL_TOKEN }}
+        external_repository: Kiriago-san/webSite
+        publish_dir: ./allure-report
+   # - name: Pushes to another repository
+    #  uses: cpina/github-action-push-to-another-repository@main
+    #  if: always()
+     # env:
+      # API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+      #with:
+       #source-directory: 'allure-report'
+       #destination-github-username: 'Kiriago-san'
+       #destination-repository-name: 'webSite'
+       #user-email: o.leonov@nltu.lviv.ua
+       #target-branch: main
