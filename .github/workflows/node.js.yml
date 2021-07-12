@@ -34,8 +34,7 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
-    - name: copy history
-      run: cp -R gh-pages/history allure-results
+
     - name: run test
       run: npm run test
     - name: Test marketplace action
@@ -47,26 +46,32 @@ jobs:
        gh_pages: gh-pages
        allure_report: allure-report
        allure_history: allure-history
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      #id: allure-report
+      with:
+        allure_results: allure-results
+        #gh_pages: gh-pages
+        #allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 20
     - name: save allure history to another branch
       uses: simple-elf/allure-report-action@master
       if: always()
       id: allure-report2
       with:
-       allure_results: allure-results
-       gh_pages: gh-pages
-       allure_report: allure-report
-       allure_history: allure-history
-    - name: Pushes to another repository
-      uses: cpina/github-action-push-to-another-repository@main
+        allure_results: allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+    - name: Deploy report to Github Pages
       if: always()
+      uses: peaceiris/actions-gh-pages@v2
       env:
-       API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
-      with:
-       source-directory: 'allure-report'
-       destination-github-username: 'Kiriago-san'
-       destination-repository-name: 'wdio-allure'
-       user-email: o.leonov@nltu.lviv.ua
-       target-branch: gh-pages
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
       if: always()
