@@ -1,0 +1,22 @@
+{
+  "6836497e7ea9a11b2c0a711c298a65a7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a0308f5c0cee3ed6",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/41//#testresult/a0308f5c0cee3ed6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626073313367,
+        "stop" : 1626073314643,
+        "duration" : 1276
+      }
+    } ]
+  }
+}
