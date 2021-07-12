@@ -1,21 +1,58 @@
 {
   "6836497e7ea9a11b2c0a711c298a65a7" : {
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 4,
       "unknown" : 0,
-      "total" : 1
+      "total" : 5
     },
     "items" : [ {
-      "uid" : "d2c654818d6873aa",
-      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/39//#testresult/d2c654818d6873aa",
+      "uid" : "a15dded4063f7ca0",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/38//#testresult/a15dded4063f7ca0",
+      "status" : "failed",
+      "statusDetails" : "Expect $(`#flash`) to have text containing\n                \n                - Expected  - 1\n                + Received  + 2\n                \n                - You logged into a secure area! \n                + You logged into a secure area!\n                + ×",
+      "time" : {
+        "start" : 1626073170767,
+        "stop" : 1626073181592,
+        "duration" : 10825
+      }
+    }, {
+      "uid" : "682861abc331c913",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/41//#testresult/682861abc331c913",
       "status" : "passed",
       "time" : {
-        "start" : 1626071855415,
-        "stop" : 1626071856755,
-        "duration" : 1340
+        "start" : 1626073053526,
+        "stop" : 1626073054184,
+        "duration" : 658
+      }
+    }, {
+      "uid" : "26070c13dc63771b",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/41//#testresult/26070c13dc63771b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626072899947,
+        "stop" : 1626072903386,
+        "duration" : 3439
+      }
+    }, {
+      "uid" : "ff9da0a30023a0e",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/40//#testresult/ff9da0a30023a0e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626072642140,
+        "stop" : 1626072642770,
+        "duration" : 630
+      }
+    }, {
+      "uid" : "4bf35ad9e22efe12",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/40//#testresult/4bf35ad9e22efe12",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626072391665,
+        "stop" : 1626072394026,
+        "duration" : 2361
       }
     } ]
   }
