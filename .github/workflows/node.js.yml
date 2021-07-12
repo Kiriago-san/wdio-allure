@@ -36,14 +36,14 @@ jobs:
         ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
         BRANCH: master
         FOLDER: allure-report
-        TARGET_FOLDER: allure-report
+        TARGET_FOLDER: docs
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
       if: always()
       env:
          API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
-       source-directory: 'allure-report'
+       source-directory: 'docs'
        destination-github-username: 'Kiriago-san'
        destination-repository-name: 'webSite'
        user-email: o.leonov@nltu.lviv.ua
