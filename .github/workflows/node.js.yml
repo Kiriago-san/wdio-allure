@@ -27,58 +27,24 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - name: Get Allure history
-      uses: actions/checkout@v2
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
-
     - name: run test
       run: npm run test
-    - name: Test marketplace action
-      uses: simple-elf/allure-report-action@master
+    - name: Create Report
+      uses: JamesIves/github-pages-deploy-action@3.1.0
       if: always()
-      id: allure-report1
       with:
-       allure_results: build/allure-results
-       gh_pages: gh-pages
-       allure_report: allure-report
-       allure_history: allure-history
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
+        ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        BRANCH: master
+        FOLDER: allure-report
+        TARGET_FOLDER: allure-report
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@main
       if: always()
-      #id: allure-report
-      with:
-        allure_results: allure-results
-        #gh_pages: gh-pages
-        #allure_report: allure-report
-        allure_history: allure-history
-        keep_reports: 20
-    - name: save allure history to another branch
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      id: allure-report2
-      with:
-        allure_results: allure-results
-        gh_pages: gh-pages
-        allure_report: allure-report
-        allure_history: last-history
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3
       env:
-        deploy_key: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./allure-report
-   # - name: Pushes to another repository
-    #  uses: cpina/github-action-push-to-another-repository@main
-    #  if: always()
-     # env:
-      # API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
-      #with:
-       #source-directory: 'allure-report'
-       #destination-github-username: 'Kiriago-san'
-       #destination-repository-name: 'webSite'
-       #user-email: o.leonov@nltu.lviv.ua
-       #target-branch: main
+         API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+      with:
+       source-directory: 'allure-report'
+       destination-github-username: 'Kiriago-san'
+       destination-repository-name: 'webSite'
+       user-email: o.leonov@nltu.lviv.ua
+       target-branch: main
