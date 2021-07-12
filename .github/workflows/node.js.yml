@@ -36,10 +36,19 @@ jobs:
         path: gh-pages
     - name: run test
       run: npm run test
+    - name: Test marketplace action
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report1
+      with:
+       allure_results: build/allure-results
+       gh_pages: gh-pages
+       allure_report: allure-report
+       allure_history: allure-history
     - name: save allure history to another branch
       uses: simple-elf/allure-report-action@master
       if: always()
-      id: allure-report
+      id: allure-report2
       with:
        allure_results: allure-results
        gh_pages: gh-pages
