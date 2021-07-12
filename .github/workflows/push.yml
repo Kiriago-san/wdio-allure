@@ -3,7 +3,7 @@ name:  Push report
 on:
   push:
     paths:
-      - 'docs/history-trend.json'
+      - 'docs/history/history-trend.json'
 jobs:
   push:
        runs-on: ubuntu-20.04
