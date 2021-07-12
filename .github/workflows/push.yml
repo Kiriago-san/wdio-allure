@@ -1,7 +1,9 @@
 name:  Push report
 
 on:
-  deployment
+  workflow_run:
+    workflows: ["Test and create report"]
+    types: [completed]
     
 jobs:
   push:
