@@ -4,11 +4,20 @@
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 3,
+      "passed" : 4,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "682861abc331c913",
+      "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/41//#testresult/682861abc331c913",
+      "status" : "passed",
+      "time" : {
+        "start" : 1626073053526,
+        "stop" : 1626073054184,
+        "duration" : 658
+      }
+    }, {
       "uid" : "26070c13dc63771b",
       "reportUrl" : "https://Kiriago-san.github.io/wdio-allure/41//#testresult/26070c13dc63771b",
       "status" : "passed",
