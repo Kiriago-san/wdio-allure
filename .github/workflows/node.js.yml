@@ -34,31 +34,3 @@ jobs:
         BRANCH: master
         FOLDER: allure-report
         TARGET_FOLDER: docs
-
-  push:
-       needs: test
-       runs-on: ubuntu-20.04
-       strategy:
-         matrix:
-           node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-       steps:
-       - uses: actions/checkout@v2
-       - name: Use Node.js ${{ matrix.node-version }}
-         uses: actions/setup-node@v2
-         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-       - run: npm ci
-       - name: Pushes to another repository
-         uses: cpina/github-action-push-to-another-repository@main
-         if: always()
-         env:
-          API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
-         with:
-          source-directory: 'docs'
-          destination-github-username: 'Kiriago-san'
-          destination-repository-name: 'webSite'
-          user-email: o.leonov@nltu.lviv.ua
-          target-branch: main
- 
